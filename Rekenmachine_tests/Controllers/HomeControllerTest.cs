@@ -44,6 +44,20 @@ namespace Rekenmachine_tests.Controllers
             Assert.That(resultaat.ViewData["OmgekeerdeNaam"], Is.EqualTo("pocoboR"));
         }
 
+        [Test]
+        public void TestBoete()
+        {
+            // Arrange
+            var controller = new HomeController();
+            int snelheid = 51;
+
+            // Act
+            var resultaat = controller.Boete(snelheid) as ViewResult;
+
+            // Assert
+            Assert.That(resultaat, Is.Not.Null);
+            Assert.That(resultaat.ViewData["Snelheid"], Is.GreaterThan(50));
+        }
     }
     
 }

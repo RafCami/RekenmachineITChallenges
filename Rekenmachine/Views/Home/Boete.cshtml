@@ -1,0 +1,14 @@
+﻿@model String
+
+<h2>Bereken boete</h2>
+
+<form method="post" asp-action="Boete">
+    <div>
+        <input type="number" name="snelheid" placeholder="@(ViewData["Snelheid"] != null ? ViewData["Snelheid"] : "Snelheid")" required /></div><br />
+    <div><input type="submit" value="Bereken de boete" /></div><br />
+</form>
+
+@if (ViewData["Boete"] != null)
+{
+    <div>@ViewData["Boete"]</div>
+}
